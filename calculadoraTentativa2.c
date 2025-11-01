@@ -87,15 +87,12 @@ int divisao() {
     printf("\nDigite o segundo número: ");
     scanf("%lf", &b);
     getchar();
-    while (b == 0) {
-        if (b == 0) {
-            printf("\nNão é possível dividir por 0. Por favor escolha outro número: ");
-            scanf("%lf", &b);
-            getchar();
-        }
+    if (b != 0) {
+        printf("\n(Se escreveu uma entrada não numérica, por favor realizar a conta novamente)");
+        printf("\nResultado: %lf/%lf = %lf", a, b, a/b);
+    } else {
+        printf("\nVocê não pode dividir por zero.")
     }
-    printf("\n(Se escreveu uma entrada não numérica, por favor realizar a conta novamente)");
-    printf("\nResultado: %lf/%lf = %lf", a, b, a/b);
     printf("\nDeseja realizar outra operação? (s/n): ");
     scanf("%c", &c);
     do {
