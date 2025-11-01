@@ -135,7 +135,7 @@ int main() {
             printf("\nObrigado por usar a calculadora! Até a próxima.\n");
             return 0;
         } else {
-            printf("\nSua opção é inválida.\n Favor prossegir e em seguida escolher outra opção: ");
+            printf("\nSua opção é inválida.\n Favor prossegir e em seguida escolher outra opção: "); //Essa parte corretamente pede para o usuário colocar outro número se x < 1 ou x > 5. Caso o usuário colocar uma entrada não numérica, o código se repete e explica o que aconteceu na linha printf 115.
             scanf("");
             getchar();
         }
