@@ -16,9 +16,9 @@ int adicao() {
     printf("\nDeseja realizar outra operação? (s/n): ");
     scanf("%c", &c);
     do {
-        if (c == 's') {
+        if (c == 's' || c == 'S') {
             return 0;
-        } else if (c == 'n') {
+        } else if (c == 'n' || c == 'N') {
             printf("Obrigado por usar a calculadora! Até a próxima.\n");
             return 1;
         } else {
@@ -26,7 +26,7 @@ int adicao() {
                 scanf("%c", &c);
                 getchar();
             }
-        } while (c != 's' && c != 'n');
+        } while (c != 's' && c != 'n' && c != 'S' && c != 'N');
 }
 
 int subtracao() {
@@ -41,9 +41,9 @@ int subtracao() {
     printf("\nDeseja realizar outra operação? (s/n): ");
     scanf("%c", &c);
     do {
-        if (c == 's') {
+        if (c == 's' || c == 'S') {
             return 0;
-        } else if (c == 'n') {
+        } else if (c == 'n' || c == 'N') {
             printf("Obrigado por usar a calculadora! Até a próxima.\n");
             return 1;
         } else {
@@ -51,7 +51,7 @@ int subtracao() {
                 scanf("%c", &c);
                 getchar();
             }
-        } while (c != 's' && c != 'n');
+        } while (c != 's' && c != 'n' && c != 'S' && c != 'N');
 }
 
 int multiplicacao() {
@@ -66,9 +66,9 @@ int multiplicacao() {
     printf("\nDeseja realizar outra operação? (s/n): ");
     scanf("%c", &c);
     do {
-        if (c == 's') {
+        if (c == 's' || c == 'S') {
             return 0;
-        } else if (c == 'n') {
+        } else if (c == 'n' || c == 'N') {
             printf("Obrigado por usar a calculadora! Até a próxima.\n");
             return 1;
         } else {
@@ -76,7 +76,7 @@ int multiplicacao() {
                 scanf("%c", &c);
                 getchar();
             }
-        } while (c != 's' && c != 'n');
+        } while (c != 's' && c != 'n' && c != 'S' && c != 'N');
 }
 
 
@@ -99,9 +99,9 @@ int divisao() {
     printf("\nDeseja realizar outra operação? (s/n): ");
     scanf("%c", &c);
     do {
-        if (c == 's') {
+        if (c == 's' || c == 'S') {
             return 0;
-        } else if (c == 'n') {
+        } else if (c == 'n' || c == 'N') {
             printf("Obrigado por usar a calculadora! Até a próxima.\n");
             return 1;
         } else {
@@ -109,13 +109,13 @@ int divisao() {
                 scanf("%c", &c);
                 getchar();
             }
-        } while (c != 's' && c != 'n');
+        } while (c != 's' && c != 'n' && c != 'S' && c != 'N');
 }
 
 
 int main() {
     while (x != 1 || x != 2 || x != 3 || x != 4 || x != 5) {
-        printf("===============================\nCalculadora Simples\n===============================\nSelecione uma operação:\n1. Adição\n2. Subtração\n3. Multiplicação\n4. Divisão\n5. Sair\nOpção: ");
+        printf("===============================\nCalculadora Simples\n===============================\nSelecione uma operação:\n1. Adição\n2. Subtração\n3. Multiplicação\n4. Divisão\n5. Sair\n(Se você escolher uma entrada não numérica, escolha uma entrada numérica quando o código se repetir)\nOpção: ");
         scanf("%lf", &x);
         getchar();
         if (x == 1) {
@@ -145,3 +145,4 @@ int main() {
     }
     x = 0;
 }
+ 
