@@ -112,7 +112,7 @@ int divisao() {
 
 int main() {
     while (x != 1 || x != 2 || x != 3 || x != 4 || x != 5) {
-        printf("===============================\nCalculadora Simples\n===============================\nSelecione uma operação:\n1. Adição\n2. Subtração\n3. Multiplicação\n4. Divisão\n5. Sair\n(Se você escolher uma entrada não numérica, escolha uma entrada numérica quando o código se repetir)\nOpção: ");
+        printf("\n===============================\nCalculadora Simples\n===============================\nSelecione uma operação:\n1. Adição\n2. Subtração\n3. Multiplicação\n4. Divisão\n5. Sair\n(Se você escolher uma entrada não numérica, escolha uma entrada numérica quando o código se repetir)\nOpção: ");
         scanf("%lf", &x);
         getchar();
         if (x == 1) {
@@ -135,7 +135,7 @@ int main() {
             printf("\nObrigado por usar a calculadora! Até a próxima.\n");
             return 0;
         } else {
-            printf("\nSua opção é inválida.\n Favor prossegir e em seguida escolher outra opção: ");
+            printf("\nSua opção é inválida.\n Favor prossegir dando enter e em seguida escolher outra opção: ");
             scanf("");
             getchar();
         }
