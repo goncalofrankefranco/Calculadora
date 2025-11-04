@@ -2,9 +2,9 @@
 #include <string.h>
 double x = 0;
 char c;
-char string[100], check[101], nada[100];
+char string[106], check[107], nada[106];
 int a = 0, b = 0, count = 0, countA = 0, i = 0;
-FILE *p;
+FILE *p = fopen("estoque.txt", "w");
 
 int numeroDeAlgarismos(int a) {
     countA++;
@@ -25,11 +25,10 @@ int adicionarItem() {
     getchar();
     printf("\n(Se escreveu uma entrada não numérica, por favor adicionar novamente)");
     
-    p = fopen("estoque.txt", "w");
     if(p == NULL || a < 0) {
         printf("\nHouve um erro ao adicionar o produto.");
     } else {
-        fprintf(p, "%s\n%d", string, a);
+        fprintf(p, "Nome: %s\n Quantidade: %d", string, a);
         printf("\nItem adicionado com sucesso!");
         count++;
     }
@@ -51,7 +50,6 @@ int adicionarItem() {
 }
 
 int removerItem() {
-    p = fopen("estoque.txt", "w");
     if(p == NULL) {
         printf("\nHouve um erro ao abrir o estoque.");
     } else {
@@ -108,10 +106,15 @@ int listarEstoque() {
     if(p == NULL) {
         printf("\nHouve um erro ao ler o estoque. Estoque inexistente.");
     } else {
-        while (feof(p) == 0) {
+        if (feof(p) != 0) {
+            printf("\nEstoque vazio.")
+        } else {
+            printf("\nEstoque atual:")
+            while (feof(p) == 0) {
             fgets(string, 100, p);
             printf("\n%s", string);
             strcpy(string, nada);
+            }
         }
     }
     
