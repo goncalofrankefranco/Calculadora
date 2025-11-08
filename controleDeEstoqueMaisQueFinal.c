@@ -50,6 +50,7 @@ int adicionarItem() {
 }
 
 int removerItem() {
+    p = fopen("estoque.txt", "r+");
     if(p == NULL) {
         printf("\nHouve um erro ao abrir o estoque.");
     } else {
@@ -57,7 +58,7 @@ int removerItem() {
     }
     
     printf("\n(Máximo 100 caracteres)\nDigite o nome do item: ");
-    scanf("%s", string);
+    scanf("%s[^\n]", string);
     getchar();
 
     while (fgets(linha, 112, p) != NULL) {
@@ -110,9 +111,9 @@ int listarEstoque() {
     } else {
         if (feof(p) == 0) {
             printf("\n===============================\n   Estoque Atual\n===============================\n");
-            while (fscanf(p, "%s", string) == 1) {
+            while (fscanf(p, "%s[^\n]", string) == 1) {
                 printf("Nome: %s\n", string);
-                if (fscanf(p, "%s", string) == 1) {
+                if (fscanf(p, "%s[^\n]", string) == 1) {
                     printf("Quantidade: %s\n\n", string);
                 }
             }
